@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const arr1 = [5, 7, 4, 1, 6, 4, 8, 90, 77];
+  const arr2 = [6, 9, 99, 6, 5, 8, 3, 1, 9];
+
+  function findCommonElements(arr1, arr2) {
+    const obj1 = {};
+    const obj2 = {};
+    const commonElements = [];
+
+    for (let i = 0; i < arr1.length; i++) {
+      obj1[arr1[i]] = true;
+    }
+
+    for (let i = 0; i < arr2.length; i++) {
+      obj2[arr2[i]] = true;
+    }
+
+    for (key in obj1) {
+      // console.log(key);
+      if (obj2[key]) {
+        // console.log(key, "===");
+        commonElements.push(key);
+      }
+    }
+    console.log("Common elements: " + commonElements);
+  }
+
+  findCommonElements(arr1, arr2);
+</script>
